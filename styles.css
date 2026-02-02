@@ -1,0 +1,232 @@
+/* Custom Animations and Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Glass Morphism Effect */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blob {
+    0%, 100% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes progressFill {
+    from {
+        stroke-dashoffset: 552.64;
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-blob {
+    animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
+
+/* Loading Spinner */
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #a855f7;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+/* Progress Ring Animation */
+.progress-ring {
+    transition: stroke-dashoffset 1.5s ease-out;
+}
+
+/* Risk Badge Styles */
+.risk-safe {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+}
+
+.risk-low {
+    background: linear-gradient(135deg, #84cc16, #65a30d);
+    color: white;
+    box-shadow: 0 4px 20px rgba(132, 204, 22, 0.4);
+}
+
+.risk-medium {
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: white;
+    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+}
+
+.risk-high {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+}
+
+.risk-critical {
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    color: white;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Indicator Item Styles */
+.indicator-item {
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.indicator-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.indicator-safe {
+    border-left-color: #10b981;
+}
+
+.indicator-warning {
+    border-left-color: #f59e0b;
+}
+
+.indicator-danger {
+    border-left-color: #ef4444;
+}
+
+/* Input Focus Glow */
+input:focus {
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(168, 85, 247, 0.5);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(168, 85, 247, 0.7);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .glass-card {
+        padding: 1.5rem !important;
+    }
+    
+    h1 {
+        font-size: 2.5rem !important;
+    }
+}
+
+/* Fade in results with stagger */
+.results-appear {
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Icon Animations */
+.icon-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
